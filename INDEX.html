@@ -8,179 +8,90 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
+    
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:'Poppins',sans-serif;
+}
+
+html{
     scroll-behavior:smooth;
 }
 
 body{
     background:
-    radial-gradient(circle at top left,#fffde4 0%,transparent 30%),
-    radial-gradient(circle at bottom right,#fff7c2 0%,transparent 30%),
-    linear-gradient(135deg,#fffff5,#ffffe8,#FFFFC5);
-    color:#3b2f1b;
+    radial-gradient(circle at top left,rgba(247,201,72,.18),transparent 30%),
+    radial-gradient(circle at bottom right,rgba(247,201,72,.15),transparent 30%),
+    linear-gradient(135deg,#020617,#0f172a,#111827);
+    color:#fff;
     overflow-x:hidden;
 }
 
-/* SCROLLBAR */
-::-webkit-scrollbar{
-    width:8px;
-}
-::-webkit-scrollbar-thumb{
-    background:#d4b96e;
-    border-radius:10px;
-}
-
-/* HEADER */
+/* ================= HEADER ================= */
 header{
     position:fixed;
     top:0;
     width:100%;
     z-index:1000;
+    padding:14px 60px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:14px 70px;
-    background:linear-gradient(135deg,#fff9d6,#FFFFC5,#fff2a8);
-    backdrop-filter:blur(18px);
-    box-shadow:
-    0 10px 30px rgba(0,0,0,0.12),
-    inset 0 2px 8px rgba(255,255,255,0.7);
-    border-bottom:1px solid rgba(255,255,255,0.6);
+    background:rgba(2,6,23,.85);
+    backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-/* LOGO */
 .logo img{
-    height:65px;
-    object-fit:contain;
-    filter:drop-shadow(0 5px 10px rgba(0,0,0,.15));
+    height:48px;   /* ✅ HEADER LOGO PERFECT */
+    width:auto;
 }
 
-nav a{
-    text-decoration:none;
-    color:#4b3b22;
-    margin:0 18px;
-    font-weight:600;
-    transition:.3s;
-    position:relative;
-}
-
-nav a:hover{
-    color:#b68b2c;
-}
-
-nav a::after{
-    content:'';
-    position:absolute;
-    left:0;
-    bottom:-5px;
-    width:0%;
-    height:2px;
-    background:#b68b2c;
-    transition:.4s;
-}
-
-nav a:hover::after{
-    width:100%;
-}
-
-/* CALL BUTTON */
-.call-btn{
-    width:52px;
-    height:52px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:22px;
-    background:linear-gradient(145deg,#ffffff,#fff3b0);
-    color:#8a6a1f;
-    cursor:pointer;
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.12),
-    inset 0 2px 6px rgba(255,255,255,.8);
-}
-
-/* HERO */
+/* ================= HERO ================= */
 .hero{
     min-height:100vh;
-    display:flex;
+    padding:140px 60px 60px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
     align-items:center;
-    justify-content:space-between;
-    padding:140px 80px 60px;
-    position:relative;
-}
-
-.hero::before{
-    content:'';
-    position:absolute;
-    width:600px;
-    height:600px;
-    background:linear-gradient(#fff9c4,#ffe082);
-    border-radius:50%;
-    filter:blur(140px);
-    opacity:.45;
-    top:-200px;
-    left:-200px;
-}
-
-.hero::after{
-    content:'';
-    position:absolute;
-    width:500px;
-    height:500px;
-    background:#fff3a0;
-    border-radius:50%;
-    filter:blur(140px);
-    opacity:.35;
-    right:-100px;
-    bottom:-100px;
+    gap:60px;
 }
 
 .hero-content{
-    width:55%;
-    z-index:2;
+    max-width:600px;
 }
 
 .hero-content h1{
-    font-size:65px;
+    font-size:60px;
     line-height:1.15;
-    margin-bottom:20px;
     font-weight:800;
-    color:#4a3820;
 }
 
 .hero-content span{
-    background:linear-gradient(to right,#d4a937,#8b6a1d);
+    background:linear-gradient(to right,#f7c948,#fff2b2);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
 .hero-content p{
-    font-size:20px;
-    color:#5f5135;
+    margin-top:18px;
+    font-size:18px;
+    color:#cbd5e1;
     line-height:1.8;
 }
 
-/* HERO IMAGE */
 .hero-image{
-    width:40%;
-    position:relative;
-    z-index:2;
+    display:flex;
+    justify-content:center;
 }
 
 .image-box{
-    border-radius:30px;
+    max-width:480px;
+    border-radius:26px;
     overflow:hidden;
-    transform:perspective(1000px) rotateY(-8deg);
-    box-shadow:
-    0 25px 60px rgba(0,0,0,.18),
-    0 0 35px rgba(255,255,255,.7);
-    border:3px solid rgba(255,255,255,.6);
+    box-shadow:0 25px 60px rgba(0,0,0,.45);
 }
 
 .image-box img{
@@ -188,76 +99,57 @@ nav a:hover::after{
     display:block;
 }
 
-/* FORM */
+/* ================= FORM ================= */
 .form-section{
-    width:100%;
     display:flex;
     justify-content:center;
     margin-top:-40px;
-    position:relative;
-    z-index:10;
 }
 
 .form-box{
-    width:420px;
-    background:rgba(255,255,255,.45);
+    width:100%;
+    max-width:420px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.1);
     backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,.8);
-    padding:25px;
-    border-radius:25px;
-    box-shadow:
-    0 20px 40px rgba(0,0,0,.12),
-    inset 0 2px 8px rgba(255,255,255,.8);
+    border-radius:22px;
+    padding:30px;
 }
 
 .form-box h3{
+    text-align:center;
     margin-bottom:16px;
     font-size:24px;
-    text-align:center;
-    color:#4b3b22;
 }
 
 .form-box input,
 .form-box textarea{
     width:100%;
-    padding:13px;
+    padding:14px 16px;
     margin-bottom:12px;
-    border:none;
-    outline:none;
     border-radius:14px;
-    background:rgba(255,255,255,.75);
-    color:#3d2f1f;
-    box-shadow:inset 0 2px 5px rgba(0,0,0,.08);
+    border:1px solid rgba(255,255,255,.1);
+    background:rgba(255,255,255,.06);
+    color:#fff;
+    outline:none;
 }
 
 .form-box button{
     width:100%;
-    padding:13px;
+    padding:14px;
     border:none;
-    border-radius:14px;
-    background:linear-gradient(135deg,#fff1a6,#d8b04a);
-    color:#4a3820;
-    font-size:16px;
+    border-radius:16px;
     font-weight:700;
     cursor:pointer;
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.12),
-    inset 0 2px 5px rgba(255,255,255,.8);
+    background:linear-gradient(135deg,#f7c948,#fff2b2);
+    color:#111;
 }
 
-.close-btn{
-    position:absolute;
-    top:30px;
-    right:40px;
-    font-size:45px;
-    cursor:pointer;
-    color:#8b6a1d;
-    z-index:10000;
-}
-
-/* SECTION */
+/* ================= SECTION ================= */
 .section{
-    padding:100px 80px;
+    padding:90px 60px;
+    max-width:1300px;
+    margin:auto;
 }
 
 .section-title{
@@ -266,252 +158,438 @@ nav a:hover::after{
 }
 
 .section-title h2{
-    font-size:48px;
-    margin-bottom:10px;
-    color:#4a3820;
+    font-size:46px;
 }
 
 .section-title span{
-    color:#b68b2c;
+    color:#f7c948;
 }
 
 .section-title p{
-    max-width:800px;
-    margin:auto;
-    color:#5f5135;
+    margin-top:10px;
+    color:#cbd5e1;
     line-height:1.8;
 }
 
-/* PORTFOLIO */
+/* ================= CARDS ================= */
 .portfolio{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:30px;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:28px;
 }
 
 .card{
-    background:rgba(255,255,255,.4);
-    border-radius:28px;
+    background:rgba(255,255,255,.06);
+    border-radius:22px;
     overflow:hidden;
-    transition:.5s;
-    border:1px solid rgba(255,255,255,.7);
-    box-shadow:
-    0 18px 35px rgba(0,0,0,.12),
-    inset 0 2px 8px rgba(255,255,255,.7);
+    transition:.35s;
+    border:1px solid rgba(255,255,255,.08);
 }
 
 .card:hover{
-    transform:translateY(-10px) scale(1.02);
+    transform:translateY(-8px);
+    box-shadow:0 20px 45px rgba(247,201,72,.25);
 }
 
 .card img{
     width:100%;
-    height:240px;
+    height:220px;
     object-fit:cover;
 }
 
-.card h3{
-    color:#4a3820;
+/* ================= POPUP ================= */
+.about-popup{
+    position:fixed;
+    inset:0;
+    background:linear-gradient(135deg,#020617,#0f172a);
+    z-index:9999;
+    display:none;
+    overflow-y:auto;
 }
 
-.card p{
-    color:#5f5135 !important;
-}
-
-/* WHO */
-.who{
-    display:grid;
-    grid-template-columns:2fr 1fr;
-    gap:50px;
-    align-items:center;
-}
-
-.who p{
-    color:#5f5135;
-    line-height:2;
-    font-size:18px;
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-}
-
-.stat{
-    background:rgba(255,255,255,.4);
-    padding:30px;
-    border-radius:22px;
-    text-align:center;
-    box-shadow:
-    0 15px 30px rgba(0,0,0,.1),
-    inset 0 2px 8px rgba(255,255,255,.8);
-}
-
-.stat strong{
+.about-popup.active{
     display:block;
-    font-size:42px;
-    color:#b68b2c;
-    margin-bottom:8px;
 }
 
-/* FOOTER */
+.about-content{
+    max-width:1100px;
+    margin:auto;
+    padding:80px 20px;
+}
+
+.close-btn{
+    position:fixed;
+    top:20px;
+    right:20px;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:#f7c948;
+    color:#111;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
 footer{
-    padding:80px;
-    background:linear-gradient(135deg,#fff5b2,#FFFFC5,#ffe78f);
-    box-shadow:0 -10px 30px rgba(0,0,0,.08);
+    background:#020617;
+    padding:70px 60px;
+    border-top:1px solid rgba(255,255,255,.08);
 }
 
 .footer-grid{
+    max-width:1300px;
+    margin:auto;
     display:grid;
     grid-template-columns:2fr 1fr 1fr 1fr;
     gap:40px;
 }
 
 .footer-logo img{
-    width:220px;
+    height:42px;   /* ✅ FOOTER LOGO FIX (SMALL & CLEAN) */
+    width:auto;
+    margin-bottom:14px;
 }
 
 footer h4{
-    color:#4a3820;
-    margin-bottom:18px;
-    font-size:22px;
+    margin-bottom:14px;
 }
 
 footer p,
-footer li{
-    color:#5f5135;
-    line-height:2;
-    list-style:none;
+footer a{
+    color:#9ca3af;
+    font-size:14px;
+    line-height:1.8;
+    text-decoration:none;
 }
 
-/* WHATSAPP */
+/* ================= WHATSAPP ================= */
 .whatsapp{
     position:fixed;
-    bottom:25px;
-    right:25px;
-    width:65px;
-    height:65px;
+    right:20px;
+    bottom:20px;
+    width:56px;
+    height:56px;
     border-radius:50%;
-    background:linear-gradient(135deg,#fff0a8,#d8b04a);
+    background:#25D366;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:30px;
+    font-size:26px;
     cursor:pointer;
-    z-index:999;
-    color:#4a3820;
-    box-shadow:
-    0 12px 30px rgba(0,0,0,.18),
-    inset 0 2px 8px rgba(255,255,255,.9);
 }
 
-/* ABOUT POPUP */
-.about-popup{
-    position:fixed;
-    top:0;
-    left:-100%;
-    width:100%;
-    height:100vh;
-    z-index:9999;
-    transition:.5s;
-    padding:60px;
-    overflow:auto;
+/* ================= MOBILE PERFECT SIZE ================= */
 
-    background:
-    radial-gradient(circle at top left,#fff8d6 0%,transparent 30%),
-    radial-gradient(circle at bottom right,#fff2b8 0%,transparent 30%),
-    linear-gradient(135deg,#fffff5,#ffffeb,#FFFFC5);
-}
-
-.about-popup.active{
-    left:0;
-}
-
-.about-content{
-    max-width:900px;
-    margin:auto;
-    padding-top:60px;
-}
-
-.about-content h2{
-    font-size:55px;
-    margin-bottom:30px;
-    color:#4a3820;
-}
-
-.about-content p{
-    font-size:19px;
-    line-height:2;
-    color:#5f5135;
-    margin-bottom:20px;
-}
-
-/* MOBILE */
-@media(max-width:950px){
+@media(max-width:900px){
 
 header{
-    padding:15px 20px;
+    padding:16px 22px;
+}
+
+.logo img{
+    height:46px;
 }
 
 nav{
-    display:none;
+    display:flex;
+    gap:18px;
+    align-items:center;
+}
+
+nav a{
+    font-size:16px;
+    color:#fff;
+    text-decoration:none;
+}
+
+.call-btn{
+    width:46px;
+    height:46px;
+    font-size:22px;
+    border-radius:50%;
+    background:#f7c948;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#111;
 }
 
 .hero{
-    flex-direction:column;
-    padding:120px 25px 50px;
+    grid-template-columns:1fr;
+    text-align:center;
+    padding:150px 28px 80px;
+    gap:50px;
 }
 
 .hero-content{
-    width:100%;
-    text-align:center;
+    margin:auto;
+    max-width:100%;
 }
 
 .hero-content h1{
-    font-size:42px;
+    font-size:52px;
+    line-height:1.2;
+}
+
+.hero-content p{
+    font-size:20px;
+    line-height:1.9;
+    margin-top:20px;
 }
 
 .hero-image{
     width:100%;
-    margin-top:40px;
 }
 
-.form-section{
-    margin-top:20px;
-    padding:0 20px;
+.image-box{
+    max-width:100%;
+    border-radius:28px;
 }
 
-.form-box{
+.image-box img{
     width:100%;
 }
 
-.section{
-    padding:70px 25px;
+.form-section{
+    padding:0 25px;
+    margin-top:-20px;
 }
 
-.who{
+.form-box{
+    max-width:100%;
+    padding:35px 28px;
+}
+
+.form-box h3{
+    font-size:30px;
+}
+
+.form-box input,
+.form-box textarea{
+    padding:18px;
+    font-size:17px;
+}
+
+.form-box button{
+    padding:18px;
+    font-size:18px;
+}
+
+.section{
+    padding:90px 28px;
+}
+
+.section-title h2{
+    font-size:42px;
+}
+
+.section-title p{
+    font-size:18px;
+    line-height:1.9;
+}
+
+.portfolio{
     grid-template-columns:1fr;
+    gap:32px;
+}
+
+.card img{
+    height:260px;
+}
+
+.card h3{
+    font-size:26px;
+}
+
+.card p{
+    font-size:17px;
+    line-height:1.9;
+}
+
+.about-content{
+    padding:100px 22px;
+}
+
+.about-content h2{
+    font-size:42px;
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.about-content p{
+    font-size:18px;
+    line-height:2;
+    margin-bottom:18px;
+}
+
+.about-content img{
+    width:100% !important;
+    height:auto !important;
+}
+
+.close-btn{
+    width:54px;
+    height:54px;
+    font-size:30px;
+}
+
+#servicePopup .about-content div{
+    grid-template-columns:1fr !important;
+}
+
+#servicePopup h3{
+    font-size:32px !important;
+}
+
+footer{
+    padding:80px 28px;
 }
 
 .footer-grid{
     grid-template-columns:1fr;
+    text-align:center;
+    gap:50px;
+}
+
+.footer-logo img{
+    height:50px;
+}
+
+footer h4{
+    font-size:24px;
+}
+
+footer p,
+footer a{
+    font-size:17px;
+    line-height:2;
+}
+
+.whatsapp{
+    width:68px;
+    height:68px;
+    font-size:30px;
+    right:18px;
+    bottom:18px;
+}
+
+}
+
+/* ================= EXTRA SMALL PHONE ================= */
+
+@media(max-width:480px){
+
+header{
+    padding:14px 16px;
+}
+
+.logo img{
+    height:40px;
+}
+
+nav{
+    gap:10px;
+}
+
+nav a{
+    font-size:14px;
+}
+
+.hero{
+    padding:135px 20px 70px;
+}
+
+.hero-content h1{
+    font-size:40px;
+}
+
+.hero-content p{
+    font-size:17px;
+}
+
+.form-box{
+    padding:28px 20px;
+}
+
+.section{
+    padding:75px 20px;
+}
+
+.section-title h2{
+    font-size:34px;
+}
+
+.card img{
+    height:220px;
 }
 
 .about-content h2{
-    font-size:38px;
+    font-size:34px;
 }
 
-.about-popup{
-    padding:30px 20px;
+.about-content p{
+    font-size:16px;
+}
+
+footer h4{
+    font-size:22px;
 }
 
 }
 
+/* ================= MOBILE HEADER FINAL ================= */
 
+@media(max-width:768px){
 
+header{
+    padding:16px 18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* LOGO */
+.logo img{
+    height:44px;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+/* ABOUT + SERVICE */
+nav a{
+    text-decoration:none;
+    color:#fff;
+    font-size:15px;
+    font-weight:500;
+}
+
+/* HIDE HOME */
+nav a:nth-child(1){
+    display:none;
+}
+
+/* HIDE CONTACT */
+nav a:nth-child(4){
+    display:none;
+}
+
+/* HIDE CALL BUTTON */
+.call-btn{
+    display:none;
+}
+
+}
 </style>
-
+    
 </head>
 
 <body>
@@ -536,7 +614,7 @@ nav{
         margin-bottom:50px;
         ">
 
-            <!-- CEO -->
+            <!-- OWNER -->
             <div style="text-align:center;">
 
                 <img src="https://i.postimg.cc/0Nc9h6Pr/IMG-20260509-WA0004.jpg"
@@ -550,7 +628,7 @@ nav{
                 ">
 
                 <h3 style="margin-top:18px;font-size:28px;color:#22c55e;">
-                    CEO
+                    OWNER
                 </h3>
 
                 <p style="font-size:20px;color:#023020;">
@@ -559,7 +637,7 @@ nav{
 
             </div>
 
-            <!-- FOUNDER -->
+            <!-- MANAGER -->
             <div style="text-align:center;">
 
                 <img src="https://i.postimg.cc/SRzqXD89/IMG-20260509-WA0005.jpg"
@@ -573,11 +651,11 @@ nav{
                 ">
 
                 <h3 style="margin-top:18px;font-size:28px;color:#22c55e;">
-                    Founder
+                   MANAGER
                 </h3>
 
                 <p style="font-size:20px;color:#023020;">
-                    ABHISHEK SHARMA
+                    RAJESH VARMA
                 </p>
 
             </div>
@@ -677,7 +755,7 @@ nav{
 <header>
 
     <div class="logo">
-        <img src="https://i.postimg.cc/8cFrz4xc/LOGOOOOOOO-removebg-preview.png">
+        <img src="https://i.postimg.cc/43qK6Ds8/image.png">
     </div>
 
     <nav>
@@ -687,7 +765,7 @@ nav{
     <a href="javascript:void(0)" onclick="openContact()">Contact</a>
 </nav>
 
-    <div class="call-btn" onclick="whatsapp()">📞</div>
+   <div class="call-btn" onclick="whatsapp()">📞</div>
 
 </header>
 
@@ -952,38 +1030,206 @@ nav{
 
 </div>
 
+<!-- CONTACT POPUP -->
 <div class="about-popup" id="contactPopup">
 
     <div class="close-btn" onclick="closeContact()">×</div>
 
     <div class="about-content" style="text-align:center;">
 
-        <h2>Contact Us</h2>
+        <h2 style="margin-bottom:40px;">Contact PS Digital Solutions</h2>
 
         <div style="
-        background:rgba(255,255,255,.08);
-        padding:40px;
-        border-radius:25px;
-        margin-top:40px;
+        max-width:700px;
+        margin:auto;
+        display:flex;
+        flex-direction:column;
+        gap:22px;
         ">
 
-            <h3 style="font-size:35px;margin-bottom:20px;">
-                📞 9717440035
-            </h3>
+            <!-- MOBILE -->
+            <a href="tel:9717440035" style="
+            text-decoration:none;
+            color:#fff;
+            background:rgba(255,255,255,.08);
+            padding:22px;
+            border-radius:20px;
+            display:flex;
+            align-items:center;
+            gap:18px;
+            border:1px solid rgba(255,255,255,.1);
+            ">
 
-            <h3 style="font-size:35px;">
-                💬 WhatsApp: 9717440035
-            </h3>
+                <div style="
+                width:60px;
+                height:60px;
+                border-radius:50%;
+                background:#f7c948;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                font-size:28px;
+                ">
+                📞
+                </div>
+
+                <div style="text-align:left;">
+                    <h3 style="font-size:24px;">Mobile Number</h3>
+                    <p style="color:#cbd5e1;">9717440035</p>
+                </div>
+
+            </a>
+
+
+            <!-- WHATSAPP -->
+            <a href="https://wa.me/9717440035"
+            target="_blank"
+            style="
+            text-decoration:none;
+            color:#fff;
+            background:rgba(255,255,255,.08);
+            padding:22px;
+            border-radius:20px;
+            display:flex;
+            align-items:center;
+            gap:18px;
+            border:1px solid rgba(255,255,255,.1);
+            ">
+
+                <div style="
+                width:60px;
+                height:60px;
+                border-radius:50%;
+                background:#25D366;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                font-size:28px;
+                ">
+                💬
+                </div>
+
+                <div style="text-align:left;">
+                    <h3 style="font-size:24px;">WhatsApp</h3>
+                    <p style="color:#cbd5e1;">Chat Now</p>
+                </div>
+
+            </a>
+
+
+            <!-- INSTAGRAM -->
+            <a href="https://www.instagram.com/psdsweb.app?igsh=MWg5YzZxZjh3YWE2Mw=="
+            target="_blank"
+            style="
+            text-decoration:none;
+            color:#fff;
+            background:rgba(255,255,255,.08);
+            padding:22px;
+            border-radius:20px;
+            display:flex;
+            align-items:center;
+            gap:18px;
+            border:1px solid rgba(255,255,255,.1);
+            ">
+
+                <div style="
+                width:60px;
+                height:60px;
+                border-radius:50%;
+                background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                font-size:28px;
+                ">
+                📸
+                </div>
+
+                <div style="text-align:left;">
+                    <h3 style="font-size:24px;">Instagram</h3>
+                    <p style="color:#cbd5e1;">@psdsweb.app</p>
+                </div>
+
+            </a>
+
+
+            <!-- GMAIL -->
+            <a href="mailto:contactpsdigitalsolution@gmail.com"
+            style="
+            text-decoration:none;
+            color:#fff;
+            background:rgba(255,255,255,.08);
+            padding:22px;
+            border-radius:20px;
+            display:flex;
+            align-items:center;
+            gap:18px;
+            border:1px solid rgba(255,255,255,.1);
+            ">
+
+                <div style="
+                width:60px;
+                height:60px;
+                border-radius:50%;
+                background:#ea4335;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                font-size:28px;
+                ">
+                ✉️
+                </div>
+
+                <div style="text-align:left;">
+                    <h3 style="font-size:24px;">Gmail</h3>
+                    <p style="color:#cbd5e1;">
+                    contactpsdigitalsolution@gmail.com
+                    </p>
+                </div>
+
+            </a>
+
+
+            <!-- LOCATION -->
+            <a href="https://maps.app.goo.gl/Dr52NAumdporuDju9"
+            target="_blank"
+            style="
+            text-decoration:none;
+            color:#fff;
+            background:rgba(255,255,255,.08);
+            padding:22px;
+            border-radius:20px;
+            display:flex;
+            align-items:center;
+            gap:18px;
+            border:1px solid rgba(255,255,255,.1);
+            ">
+
+                <div style="
+                width:60px;
+                height:60px;
+                border-radius:50%;
+                background:#22c55e;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                font-size:28px;
+                ">
+                📍
+                </div>
+
+                <div style="text-align:left;">
+                    <h3 style="font-size:24px;">Location</h3>
+                    <p style="color:#cbd5e1;">Open Google Maps</p>
+                </div>
+
+            </a>
 
         </div>
 
     </div>
 
 </div>
-
-
-</section>
-
 <!-- FOOTER -->
 <footer id="contact">
 
@@ -992,7 +1238,7 @@ nav{
         <div>
 
             <div class="footer-logo">
-                <img src="https://i.postimg.cc/8cFrz4xc/LOGOOOOOOO-removebg-preview.png">
+                <img src="https://i.postimg.cc/43qK6Ds8/image.png">
             </div>
 
             <p>
@@ -1002,39 +1248,142 @@ nav{
 
         </div>
 
+        <!-- QUICK LINKS -->
         <div>
+
             <h4>Quick Links</h4>
 
             <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Services</li>
-                <li>Contact</li>
+
+                <li>
+                    <a href="#home" style="
+                    text-decoration:none;
+                    color:#5f5135;
+                    ">
+                    Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="javascript:void(0)"
+                    onclick="openAbout()"
+                    style="
+                    text-decoration:none;
+                    color:#5f5135;
+                    ">
+                    About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#services"
+                    style="
+                    text-decoration:none;
+                    color:#5f5135;
+                    ">
+                    Services
+                    </a>
+                </li>
+
+                <li>
+                    <a href="javascript:void(0)"
+                    onclick="openContact()"
+                    style="
+                    text-decoration:none;
+                    color:#5f5135;
+                    ">
+                    Contact
+                    </a>
+                </li>
+
             </ul>
+
         </div>
 
+        <!-- SERVICES -->
         <div>
+
             <h4>Services</h4>
 
             <ul>
-                <li>Website Development</li>
-                <li>SEO</li>
-                <li>Digital Marketing</li>
-                <li>UI/UX Design</li>
+
+                <li>
+                    <a href="#services" style="
+                    text-decoration:none;
+                    color:#5f5135;
+                    ">
+                    Website Development
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#services" style="
+                    text-decoration:none;
+                    color:#5f5135;
+                    ">
+                    SEO
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#services" style="
+                    text-decoration:none;
+                    color:#5f5135;
+                    ">
+                    Digital Marketing
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#services" style="
+                    text-decoration:none;
+                    color:#5f5135;
+                    ">
+                    UI/UX Design
+                    </a>
+                </li>
+
             </ul>
+
         </div>
 
-        <div>
-            <h4>Contact</h4>
+        <!-- CONTACT -->
+<div>
 
-            <p>
-                📞 9717440035 <br>
-                📧 connect@psdigital.com
-            </p>
-        </div>
+    <h4>Contact</h4>
 
-    </div>
+    <p style="line-height:2.2;">
 
+        📞 
+        <a href="tel:9717440035">
+        9717440035
+        </a>
+
+        <br><br>
+
+        📸 
+        <a href="https://www.instagram.com/psdsweb.app?igsh=MWg5YzZxZjh3YWE2Mw==" target="_blank">
+        Instagram Profile
+        </a>
+
+        <br><br>
+
+        📍 
+        <a href="https://maps.app.goo.gl/Dr52NAumdporuDju9" target="_blank">
+        Our Location
+        </a>
+
+        <br><br>
+
+        ✉️ 
+        <a href="mailto:contactpsdigitalsolution@gmail.com">
+        contactpsdigitalsolution@gmail.com
+        </a>
+
+    </p>
+
+</div>
+        
 </footer>
 
 <!-- WHATSAPP -->
